@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<meta charset="utf-8" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+		<link rel="stylesheet" href="/css/default.css">
+		<title>战车</title> 
+	</head> 
+	<body> 
+		 
+
+
+<div class="nav-bar"><a  href="/pages/AllLableTest/">AllLableTest</a><a  href="/pages/map_0/">探险</a><div class="children"><a  href="/pages/map_event/">事件</a><a  href="/pages/map_monster/">怪物</a><a  href="/pages/map_encounter/">遭遇</a></div><a  href="/pages/battle_0/">战斗</a><div class="children"><a  href="/pages/battle_attack/">行动指令-武器</a><a  href="/pages/battle_skill/">行动指令-技能</a><a  href="/pages/battle_defence/">行动指令-防御</a><a  href="/pages/battle_escape/">行动指令-逃跑</a><a  href="/pages/battle_element/">元素反应</a><a  href="/pages/battle_buff/">增益状态</a><a  href="/pages/battle_debuff/">异常状态</a><a  href="/pages/battle_auto/">自动战斗</a></div><a  href="/pages/character_0/">队员</a><div class="children"><a  href="/pages/character_ability/">能力</a><a  href="/pages/character_grow/">队员成长</a></div><a  class="active"  href="/pages/tank_0/">战车</a><div class="children"><a  href="/pages/weapon_type/">武器种类</a><a  href="/pages/weapon_performance/">武器性能</a><a  href="/pages/weapon_develop/">战车养成</a><a  href="/pages/tank_factory/">战车工厂</a></div><a  href="/pages/team_0/">队伍</a><div class="children"><a  href="/pages/team_changeUnit/">更改阵容</a><a  href="/pages/team_changeEquip/">更改装备</a><a  href="/pages/team_beauty/">战车喷涂</a></div><a  href="/pages/wanted_0/">悬赏</a><a  href="/pages/active_0/">活跃</a><a  href="/pages/dispatch_0/">派遣</a></div>
+
+<script>
+	/* 保持nav bar位置. */
+
+	let navbar = document.querySelector(".nav-bar");
+	let active = document.querySelector(".active");
+	let scroll = localStorage.getItem("nav-bar-scroll");
+	if (scroll !== null) {
+		navbar.scrollTop = parseInt(scroll, 10);
+	}
+
+	// 检测active是否可见.
+	const eleTop = active.offsetTop;
+    const eleBottom = eleTop + active.clientHeight;
+    const containerTop = navbar.scrollTop;
+    const containerBottom = containerTop + navbar.clientHeight;
+
+    // The element is fully visible in the container
+    if (!(
+        (eleTop >= containerTop && eleBottom <= containerBottom) ||
+        // Some part of the element is visible in the container
+        (eleTop < containerTop && containerTop < eleBottom) ||
+        (eleTop < containerBottom && containerBottom < eleBottom)
+    )){
+		active.scrollIntoView();
+	}
+
+	window.addEventListener("beforeunload", () => {
+		localStorage.setItem("nav-bar-scroll", navbar.scrollTop);
+	});
+</script> 
+		<div class="content">
+			<h1>战车</h1>
+<p>这个世界，血肉之躯是无法匹敌战车的。“大破坏”之后，人们将旧日文明遗留的战车进行大幅改造，即使1个人也可以驾驶，借助战车的发展，人们拥有了对抗怪物的武器。</p>
+<p>战车由车体、武器、引擎、C单元组成。</p>
+<h2>车体</h2>
+<p>车体决定了HP，并提供防御属性。</p>
+<p>每个车体对不同<a href="/pages/battle_element">元素</a>的伤害，有不同的防御性能。</p>
+<p>每个车体有最多5个武器槽，可装备的<a href="/pages/weapon_type">武器种类</a>不同。</p>
+<h2>武器</h2>
+<p>武器提供攻击、命中属性。</p>
+<p>每种武器有不同的<a href="/pages/weapon_performance">攻击性能</a>。</p>
+<h2>C单元</h2>
+<p>C单元提供闪避、行动速度。</p>
+<p>部分C单元带有1个特殊效果。</p>
+<h2>引擎</h2>
+<p>车体、武器、C单元都有重量，稀有度越高，重量越重。引擎提供负重，决定了战车的装备上限。</p>
+<p>部分引擎带有1个特殊效果。</p>
+
+		</div> 
+	</body>
+</html>

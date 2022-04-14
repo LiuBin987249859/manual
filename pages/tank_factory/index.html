@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<meta charset="utf-8" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+		<link rel="stylesheet" href="/css/default.css">
+		<title>战车工厂</title> 
+	</head> 
+	<body> 
+		 
+
+
+<div class="nav-bar"><a  href="/pages/AllLableTest/">AllLableTest</a><a  href="/pages/map_0/">探险</a><div class="children"><a  href="/pages/map_event/">事件</a><a  href="/pages/map_monster/">怪物</a><a  href="/pages/map_encounter/">遭遇</a></div><a  href="/pages/battle_0/">战斗</a><div class="children"><a  href="/pages/battle_attack/">行动指令-武器</a><a  href="/pages/battle_skill/">行动指令-技能</a><a  href="/pages/battle_defence/">行动指令-防御</a><a  href="/pages/battle_escape/">行动指令-逃跑</a><a  href="/pages/battle_element/">元素反应</a><a  href="/pages/battle_buff/">增益状态</a><a  href="/pages/battle_debuff/">异常状态</a><a  href="/pages/battle_auto/">自动战斗</a></div><a  href="/pages/character_0/">队员</a><div class="children"><a  href="/pages/character_ability/">能力</a><a  href="/pages/character_grow/">队员成长</a></div><a  href="/pages/tank_0/">战车</a><div class="children"><a  href="/pages/weapon_type/">武器种类</a><a  href="/pages/weapon_performance/">武器性能</a><a  href="/pages/weapon_develop/">战车养成</a><a  class="active"  href="/pages/tank_factory/">战车工厂</a></div><a  href="/pages/team_0/">队伍</a><div class="children"><a  href="/pages/team_changeUnit/">更改阵容</a><a  href="/pages/team_changeEquip/">更改装备</a><a  href="/pages/team_beauty/">战车喷涂</a></div><a  href="/pages/wanted_0/">悬赏</a><a  href="/pages/active_0/">活跃</a><a  href="/pages/dispatch_0/">派遣</a></div>
+
+<script>
+	/* 保持nav bar位置. */
+
+	let navbar = document.querySelector(".nav-bar");
+	let active = document.querySelector(".active");
+	let scroll = localStorage.getItem("nav-bar-scroll");
+	if (scroll !== null) {
+		navbar.scrollTop = parseInt(scroll, 10);
+	}
+
+	// 检测active是否可见.
+	const eleTop = active.offsetTop;
+    const eleBottom = eleTop + active.clientHeight;
+    const containerTop = navbar.scrollTop;
+    const containerBottom = containerTop + navbar.clientHeight;
+
+    // The element is fully visible in the container
+    if (!(
+        (eleTop >= containerTop && eleBottom <= containerBottom) ||
+        // Some part of the element is visible in the container
+        (eleTop < containerTop && containerTop < eleBottom) ||
+        (eleTop < containerBottom && containerBottom < eleBottom)
+    )){
+		active.scrollIntoView();
+	}
+
+	window.addEventListener("beforeunload", () => {
+		localStorage.setItem("nav-bar-scroll", navbar.scrollTop);
+	});
+</script> 
+		<div class="content">
+			<h1>战车工厂</h1>
+<p>战车工厂是获得车体的主要途径。</p>
+<p>工厂起初有两条生产线，每条生产线同时可以制造一辆战车。</p>
+<p>生产前，需要向工厂一次性提供废料、钢、电子元件、巴特工具箱4种材料，之后工厂开始自动制造，不同战车花费的时间也不同，越厉害的战车花费的时间越多。</p>
+<p>根据材料的数量和配比，可能会造出不同的战车，甚至可以造出从没见过的稀有战车。</p>
+<p>废料、钢、电子元件主要在营地生产，另外击败地图上的<a href="/pages/map_monster">怪物</a>也有一定概率获得。而巴特工具箱只能通过<a href="/pages/active_0">活跃</a>奖励获得。</p>
+
+		</div> 
+	</body>
+</html>

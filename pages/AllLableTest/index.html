@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<meta charset="utf-8" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+		<link rel="stylesheet" href="/css/default.css">
+		<title></title> 
+	</head> 
+	<body> 
+		 
+
+
+<div class="nav-bar"><a  class="active"  href="/pages/AllLableTest/">AllLableTest</a><a  href="/pages/map_0/">探险</a><div class="children"><a  href="/pages/map_event/">事件</a><a  href="/pages/map_monster/">怪物</a><a  href="/pages/map_encounter/">遭遇</a></div><a  href="/pages/battle_0/">战斗</a><div class="children"><a  href="/pages/battle_attack/">行动指令-武器</a><a  href="/pages/battle_skill/">行动指令-技能</a><a  href="/pages/battle_defence/">行动指令-防御</a><a  href="/pages/battle_escape/">行动指令-逃跑</a><a  href="/pages/battle_element/">元素反应</a><a  href="/pages/battle_buff/">增益状态</a><a  href="/pages/battle_debuff/">异常状态</a><a  href="/pages/battle_auto/">自动战斗</a></div><a  href="/pages/character_0/">队员</a><div class="children"><a  href="/pages/character_ability/">能力</a><a  href="/pages/character_grow/">队员成长</a></div><a  href="/pages/tank_0/">战车</a><div class="children"><a  href="/pages/weapon_type/">武器种类</a><a  href="/pages/weapon_performance/">武器性能</a><a  href="/pages/weapon_develop/">战车养成</a><a  href="/pages/tank_factory/">战车工厂</a></div><a  href="/pages/team_0/">队伍</a><div class="children"><a  href="/pages/team_changeUnit/">更改阵容</a><a  href="/pages/team_changeEquip/">更改装备</a><a  href="/pages/team_beauty/">战车喷涂</a></div><a  href="/pages/wanted_0/">悬赏</a><a  href="/pages/active_0/">活跃</a><a  href="/pages/dispatch_0/">派遣</a></div>
+
+<script>
+	/* 保持nav bar位置. */
+
+	let navbar = document.querySelector(".nav-bar");
+	let active = document.querySelector(".active");
+	let scroll = localStorage.getItem("nav-bar-scroll");
+	if (scroll !== null) {
+		navbar.scrollTop = parseInt(scroll, 10);
+	}
+
+	// 检测active是否可见.
+	const eleTop = active.offsetTop;
+    const eleBottom = eleTop + active.clientHeight;
+    const containerTop = navbar.scrollTop;
+    const containerBottom = containerTop + navbar.clientHeight;
+
+    // The element is fully visible in the container
+    if (!(
+        (eleTop >= containerTop && eleBottom <= containerBottom) ||
+        // Some part of the element is visible in the container
+        (eleTop < containerTop && containerTop < eleBottom) ||
+        (eleTop < containerBottom && containerBottom < eleBottom)
+    )){
+		active.scrollIntoView();
+	}
+
+	window.addEventListener("beforeunload", () => {
+		localStorage.setItem("nav-bar-scroll", navbar.scrollTop);
+	});
+</script> 
+		<div class="content">
+			<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<hr>
+<p><em>斜体文本</em></p>
+<p><strong>粗体文本</strong></p>
+<p><em><strong>粗斜体文本</strong></em></p>
+<p><u>带下划线文本</u></p>
+<p><s>中线文本</s></p>
+<hr>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<hr>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+<hr>
+<ol>
+<li>第一项：
+<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项：
+<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<p><a href="#">超链接</a></p>
+<hr>
+<p><img src="/assets/camp.png" alt=""></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表头</th>
+<th style="text-align:center">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:center">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+
+		</div> 
+	</body>
+</html>

@@ -1,0 +1,138 @@
+/* Manual CSS */
+
+/***************************************************
+ 自定义scroll bar.
+***************************************************/
+/* width */
+::-webkit-scrollbar {
+  width:0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fdf2b3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+body {
+	margin: 0;
+	background-color: rgb(255, 230, 199);
+}
+
+/***************************************************
+***************************************************/
+
+/* 导航选项 */
+.nav-bar a {
+	font-size:2vw;
+	font-weight: bold;
+	text-align:left;
+	display: block;
+	color:black;
+	padding: 0.3vw;
+	text-decoration: none;
+}
+
+/* 导航选中选项 */
+.nav-bar a.active{
+	color:white;
+	padding: 0;
+	border: 15px solid;
+	border-image-source: url("/css/button_11.png");
+	border-image-slice: 15 15 15 15  fill;
+}
+
+/* 导航子选项列表 */
+.nav-bar .children{
+	padding-left: 1vw;
+}
+
+/* 导航栏 */
+.nav-bar {
+	float: left;
+	margin: 0;
+	padding: 0;
+	position:fixed;
+	overflow: auto;
+	height: 100%;
+	width: 25%;
+	background-image: url("/css/com_EmptyItem.png");
+	background-size: cover;
+	background-position: center;
+}
+
+/* 一级标题 */
+.content h1{
+	font-size: 4vw;
+	font-weight: bolder;
+	text-align: center;
+	color: antiquewhite;
+	background-color: black;
+}
+
+/* 二级标题 */
+.content h2{
+	font-size: 3vw;
+	font-weight: bolder;
+	color: black;
+}
+
+/* 三级标题 */
+.content h3{
+	font-weight: bolder;
+	color: black;
+}
+
+/* 段落 */
+.content p{
+	color: rgb(96, 72, 13);
+}
+
+/* 表 */
+.content table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+/* 表头 */
+.content th {
+	color: #fdf2b3;
+	background-color: #555;
+	border: 0.2vw;
+}
+
+/* 表表数据 */
+.content td {
+	color: #555;
+	border: 0.2vw;
+}
+
+/* 表偶数行 */
+.content tr:nth-child(even) {
+	background-color: #d7cd90;
+}
+
+/* 图片 */
+.content img {
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+}
+
+/* 内容 */
+.content {
+	margin-left: 25%;
+	padding: 1vw 1vw;
+	font-size: 2vw;
+	font-weight: bold;
+}
