@@ -145,7 +145,7 @@ body {
 	font-size: 2vw;
 	font-weight: normal;
 	border: 10px solid;
-	border-image-source: url("Frame_Right.png");
+	border-image-source: url(/manual/css/Frame_Right.png);
 	border-image-slice: 8 8 8 8  fill;
 	margin-top: 2vw;
 	margin-bottom: 2vw;
@@ -164,7 +164,7 @@ body {
     height: 2vw;
 	transform: translateY(0.2vw);
     cursor: pointer;
-    background: url(/css/Extension.png) center no-repeat;
+    background: url(/manual/css/Extension.png) center no-repeat;
 }
 /* 导航栏展开图标 */
 .nav-bar div.unfold {
@@ -173,7 +173,7 @@ body {
     height: 2vw;
 	transform: translateY(0.2vw);
     cursor: pointer;
-    background: url(/css/Shrink.png) center no-repeat;
+    background: url(/manual/css/Shrink.png) center no-repeat;
 }
 /* 导航栏最低级图标 */
 .nav-bar div.point{
@@ -181,7 +181,7 @@ body {
     width: 2vw;
     height: 2vw;
 	transform: translateY(0.2vw);
-    background: url(/css/point.png) center no-repeat;
+    background: url(/manual/css/point.png) center no-repeat;
 }
 /* 导航栏一级项的a label */
 .nav-bar [oneLevelLabel_a]  {
@@ -196,5 +196,5 @@ body {
 }
 /* 导航栏展开后的border */
 .nav-bar div.foldborder{
-	background: url(/css/Extension02.png) center no-repeat;
+	background: url(/manual/css/Extension02.png) center no-repeat;
 }
