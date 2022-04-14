@@ -27,7 +27,7 @@
 
 body {
 	margin: 0;
-	background-image: url("/css/Background.png");
+	background-image: url("/manual/css/Background.png");
 	background-repeat: repeat-y;
 	background-position: right top;
 	background-attachment: scroll;
@@ -53,7 +53,7 @@ body {
 	color:#ffc75c;
 	padding: 0;
 	/* border: 15px solid;
-	border-image-source: url("/css/button_11.png");
+	border-image-source: url("/manual/css/button_11.png");
 	border-image-slice: 15 15 15 15  fill; */
 }
 
@@ -72,7 +72,7 @@ body {
 	overflow: auto;
 	height: 100%;
 	width: 21.5vw;
-	background-image: url("/css/Back_Left.png");
+	background-image: url("/manual/css/Back_Left.png");
 	background-size: cover;
 	background-position: top;
 }
